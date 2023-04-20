@@ -1,0 +1,317 @@
+###this is just some style code to make the introduction prettier, paste into HTML box on page 1 ####
+
+<style>
+/* (A) SHARED CLASS */
+.box {
+  margin: 10px;
+  padding: 10px;
+}
+ 
+/* (B) BOX VARIATIONS */
+
+/* (B1) INFORMATION BOX */
+.info {
+  color: black;
+  background: ;
+  border: 1px solid burlywood;
+      font-size: 12px;
+}
+/* (B2) SHARE BOX */
+.share {
+  color: black;
+  background: cornsilk;
+  border: 1px solid burlywood;
+      font-size: 15px;
+}
+</style>
+
+####this is the text we placed on page 1 ####
+
+<center><h1>Our energy transition will be most successful 
+if we all contribute <i>together</i>.<br> 
+<br>Citizens can sell each other energy or 
+participate together in collective energy actions. <br><br>
+Show us your vision of the energy transition below!</h1></center>
+
+####this is the instructions we placed on page 1 ####
+
+<!-- (B1) INFORMATION -->
+<div class="box info">
+  &#9432; <b>Instructions</b> <br>Select and group together those elements that represent your energy transition. Icons closer to the center are more important to you.<br>
+&#9432; <b>How?</b> Drag and drop the icon onto the target. Reposition an icon by click'n-holding its center and dragging it to the desired location. Delete an icon by clicking on it.
+</div> 
+
+
+####Place this in a PhP Box. These items have to be created in a variable called C101 first, with each item being either the title or an icon associated with the category####
+
+//Akteure
+$title1 = random_items('1');
+$items1 = random_items('2-6');
+$other1 = random_items('7');
+
+//warum
+$title2 = random_items('10');
+$items2 = random_items('11-17');
+$other2 = random_items('18');
+
+//technik
+$title3 = random_items('20');
+$items3 = random_items('21-28,19');
+$other3 = random_items('29');
+
+//organisation
+$title4 = random_items('30');
+$items4 = random_items('31-35');
+$other4 = random_items('36');
+
+
+
+$all = array_merge(
+$title1,$items1,$other1,
+$title2,$items2,$other2,
+$title3,$items3,$other3,
+$title4,$items4,$other4);
+
+question('C101', $all);
+
+
+###this is the php code that positions the icons and circle in the page####
+
+
+pageCSS('
+
+#C101_tab > div.container > div.legend {
+    height: 550px;
+    line-height: 0.85;
+}
+
+/*position of the container of C101 community*/
+#C101_tab > div.container { 
+    margin-left: 250px !important;
+    margin-top: 50px !important;
+}
+
+
+/*margin of shape to next shape*/
+div.Marker div.legend div.type {
+margin-bottom: 0.1em;
+}
+
+
+/*font and color of text in boxes*/
+body {
+    font-family: arial, sans-serif;
+    font-size: 9.5px;
+    color: #000000;
+}
+
+
+
+div.Marker div.legend div.type {
+flex-flow: column-reverse nowrap;
+width: 119px;
+height: 68px;
+padding: 4px 2px 0 2px;
+}
+
+
+');
+
+
+//With who
+
+pageCSS('
+
+.legend > div:nth-child(1) {
+    position: relative;
+    right: 740px;
+    top: -30px;
+    pointer-events: none;
+    border:none;
+    background-color:white;
+    text:black;
+    font-weight: bold;
+    text-decoration: underline;
+    //font-size: 10px;
+}
+
+
+.legend > div:nth-child(n+1):nth-child(-n+6) {
+    position: relative;
+    right: 740px;
+    top: -30px;
+    padding: 3px 0 3px 0 !important;
+   // font-size: 8px;
+}
+
+
+.legend > div:nth-child(7) {
+    position: relative;
+    right: 740px;
+    top: -30px;
+    padding: 3px 0 3px 0 !important;
+}
+
+
+
+');
+
+
+
+//warum
+
+pageCSS('
+
+.legend > div:nth-child(8) {
+    position: relative;
+    right: 0px;
+    top: -530px;
+    pointer-events: none;
+    border:none;
+    background-color:white;
+    text:black;
+    font-weight: bold;
+    text-decoration: underline;
+   // padding-top: 15px !important ;
+    // padding-bottom: 7px !important;
+}
+
+.legend > div:nth-child(n+9):nth-child(-n+15) {
+    position: relative;
+    right: 0px;
+    top: -530px;
+    padding: 2px 0 0 0 !important;
+}
+
+/*size of the text boxes*/
+.legend > div:nth-child(n+9):nth-child(-n+15)  {
+    width: 180px;
+    height: 30px;
+}
+
+.legend > div:nth-child(16) {
+    position: relative;
+    right: 0px;
+    top: -530px;
+    padding: 2px 0 0 0 !important;
+}
+
+');
+
+//do what?
+
+pageCSS('
+
+.legend > div:nth-child(17) {
+    position: relative;
+    right: -130px;
+    top: -1230px;
+    pointer-events: none;
+    border:none;
+    background-color:white;
+    text:black;
+    font-weight: bold;
+    text-decoration: underline;
+    width: 250px;
+  //  padding-top: 45px !important ;
+}
+
+.legend > div:nth-child(n+18):nth-child(-n+26) {
+    position: relative;
+    right: -130px;
+    top: -1230px;
+    width: 250px;
+    padding: 2px 0 0 0 !important;
+}
+
+/*size of the text boxes*/
+.legend > div:nth-child(n+9):nth-child(-n+15)  {
+    width: 180px;
+    height: 30px;
+}
+
+.legend > div:nth-child(27) {
+    position: relative;
+    right: -130px;
+    top: -1230px;
+    width: 250px;
+    padding: 2px 0 0 0 !important;
+}
+');
+
+//how would you participate
+
+pageCSS('
+
+.legend > div:nth-child(28) {
+    position: relative;
+    right: 600px;
+    top: -1958px;
+    pointer-events: none;
+    border:none;
+    background-color:white;
+    text:black;
+    font-weight: bold;
+    text-decoration: underline;
+//    padding-top: 25px !important ;
+  //  padding-bottom: 13px !important;
+     width: 250px;
+}
+
+.legend > div:nth-child(n+29):nth-child(-n+33) {
+    position: relative;
+    right: 600px;
+    top: -1958px;
+    width: 250px;
+    padding: 3px 0 3px 0  !important;
+}
+
+/*size of the text boxes*/
+.legend > div:nth-child(n+9):nth-child(-n+15)  {
+    width: 180px;
+    height: 30px;
+}
+
+
+.legend > div:nth-child(34) {
+    position: relative;
+    right: 600px;
+    top: -1958px;
+    width: 250px;
+    padding: 3px 0 3px 0  !important;
+}
+');
+
+pageCSS('
+div.Marker div.legend div.type:nth-child(1){
+height: 15px;
+}
+
+div.Marker div.legend div.type:nth-child(1) span.marker{
+display: none;
+}
+
+div.Marker div.legend div.type:nth-child(8){
+height: 15px;
+}
+
+div.Marker div.legend div.type:nth-child(8) span.marker{
+display: none;
+}
+
+div.Marker div.legend div.type:nth-child(17){
+height: 15px;
+}
+
+div.Marker div.legend div.type:nth-child(17) span.marker{
+display: none;
+}
+div.Marker div.legend div.type:nth-child(28){
+height: 20px;
+line-height: 1;
+}
+
+div.Marker div.legend div.type:nth-child(28) span.marker{
+display: none;
+}
+');
