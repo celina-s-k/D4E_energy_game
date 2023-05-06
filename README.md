@@ -7,7 +7,7 @@ This GitHub code contains the source code for the Energy Vision Game that can be
 
 •	The icons used in the original game. These are part of a set designed by Agata Smok for DECIDE https://www.agatasmok.be/ - Feel free to use them, but please credit DECIDE and Agata when you do. 
 
-•	A code for the style of the survey, which you can additionally add within soscisurvey.
+•	A code for the style of the survey, which can be used in contexts outside of sosci survey
 
 The code for the game is fully customizable, allowing you to adjust the icons, the terms, to add or remove parts and customize the appearance of the game. The game can also be translated into multiple languages, making it accessible to a wider range of participants. Having the code also allows you to download the data assessed by the game survey, including frequency of specific items chosen or distance between items. 
 
